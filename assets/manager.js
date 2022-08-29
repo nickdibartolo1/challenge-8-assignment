@@ -1,9 +1,9 @@
 const employee = rewqire("./employee");
 
 class manager extends employee {
-    constructor(name, id, email, officeNumber) {
+    constructor(property, id, email, officeNumber) {
 
-        super(name, id, email);
+        super(property, id, email);
 
         this.officeNumber = officeNumber;
 

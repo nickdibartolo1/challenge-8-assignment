@@ -1,5 +1,23 @@
 {
+  "name": "challenge-8-assignment",
+  "version": "1.0.0",
+  "description": "challenge 8 assignment for RUT-WebDev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickdibartolo1/challenge-8-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nickdibartolo1/challenge-8-assignment/issues"
+  },
+  "homepage": "https://github.com/nickdibartolo1/challenge-8-assignment#readme",
   "dependencies": {
-    "inquirer": "^9.1.0"
+    "inquirer": "^6.5.2"
   }
 }

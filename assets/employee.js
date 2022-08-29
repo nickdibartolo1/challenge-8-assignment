@@ -1,8 +1,10 @@
 class employee {
-    constructor(name, id, email) {
-        this.name = name;
+    constructor(property, id, email) {
+        this.property = property;
         this.id = id;
         this.email = email;
     }
 
 }
+
+console.log(employee)

@@ -1,5 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+const employee = require("./employee")
+const engineer = require("./engineer")
+const intern = require("./intern")
+const manager = require("./manager")
 
 
 
@@ -9,7 +13,7 @@ const workerArr = [];
 const addManager = () => {
     return inquirer.prompt([
         {
-            name: "name",
+            property: "name",
             type: "input",
             question: "What is the team managers name?:",
             validate: nameEntry => {
@@ -23,7 +27,7 @@ const addManager = () => {
 
         },
         {
-            name: "id",
+            property: "id",
             type: "input",
             question: "What is the team managers ID number?:",
             validate: nameEntry => {
@@ -37,7 +41,7 @@ const addManager = () => {
 
         },
         {
-            name: "email",
+            property: "email",
             type: "input",
             question: "What is the team managers email address?:",
             // validate: nameEntry => {
@@ -47,7 +51,7 @@ const addManager = () => {
             // }
         },
         {
-            name: "officeNumber",
+            property: "officeNumber",
             type: "input",
             question: "What is the team managers office number?:",
             validate: nameEntry => {
@@ -63,8 +67,8 @@ const addManager = () => {
     ])
     //function for putting object input data into a const then pushing to workerArr array.
     .then(managerEntry => {
-        const {name, id, email, officeNumber} = managerEntry;
-        const addedManager = new addedManager (name, id, email, officeNumber);
+        const {property, id, email, officeNumber} = managerEntry;
+        const addedManager = new AddedManager (property, id, email, officeNumber);
         workerArr.push(manager);
         console.log(manager);
     })
@@ -73,15 +77,16 @@ const addManager = () => {
 
 //employees object info
 const addEmployee = () => {
+    console.log('ADDING TEAM EMPLOYEES');
     return inquirer.prompt([
         {
-            name: "job",
+            property: "job",
             type: "list",
             question: "What is the job of the employee?:",
             options: ["Engineer", "Intern"]
         },
         {
-            name: "name",
+            property: "name",
             type: "input",
             question: "What is the employees name?:",
             validate: nameEntry => {
@@ -95,7 +100,7 @@ const addEmployee = () => {
 
         },
         {
-            name: "id",
+            property: "id",
             type: "input",
             question: "What is the employees ID number?:",
             validate: nameEntry => {
@@ -109,17 +114,53 @@ const addEmployee = () => {
 
         },
         {
-            name: "email",
+            property: "email",
             type: "input",
             question: "What is the employees email address?:",
             //
         },
         {
-            name: "email",
+            property: "email",
             type: "input",
             question: "What is the employees github username?:",
             //
 
+        },
+        {
+            property: "github",
+           type: "input",
+           message: "Enter the engineer employee's github username.",
+
+           //
+        },
+        {
+            property: "school",
+            type: "input",
+            message: "Enter the name of the intern's school.",
+            //
+        },
+        {
+            property: "empConfirmation",
+            type: "confirm",
+            message: "Are there any more employees you would like to add?",
+            default: false
         }
     ])
+    //employee data variable storing object data
+    .then (empData => {
+        let empData = { property, id, email, officeNumber, job, github, school, empConfirmation};
+
+        if(job === "Engineer"){
+            employee = new EngineerEmp (property, id, github, email);
+            console.log(employee);
+            
+        } else if (job === "Intern"){
+            employee = new InternEmp (property, id, school, email);
+            console.log(employee);
+
+        }
+    })
 }
+
+
+addManager();

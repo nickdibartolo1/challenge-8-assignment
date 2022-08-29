@@ -61,6 +61,7 @@ const addManager = () => {
         }
 
     ])
+    //function for putting object input data into a const then pushing to workerArr array.
     .then(managerEntry => {
         const {name, id, email, officeNumber} = managerEntry;
         const addedManager = new addedManager (name, id, email, officeNumber);
@@ -96,20 +97,6 @@ const addEmployee = () => {
         {
             name: "id",
             type: "input",
-            question: "What is the team managers ID number?:",
-            validate: nameEntry => {
-                if (nameEntry === isNaN) {
-                    console.log("Enter the team managers ID number.")
-                    return false;
-                } else {
-                    return true;
-                }
-            }
-
-        },
-        {
-            name: "id",
-            type: "input",
             question: "What is the employees ID number?:",
             validate: nameEntry => {
                 if (nameEntry === isNaN) {
@@ -128,6 +115,10 @@ const addEmployee = () => {
             //
         },
         {
+            name: "email",
+            type: "input",
+            question: "What is the employees github username?:",
+            //
 
         }
     ])

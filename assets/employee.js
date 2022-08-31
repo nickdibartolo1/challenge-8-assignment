@@ -1,4 +1,4 @@
-class employee {
+class AddedEmployee {
     constructor(name, id, email) {
         this.name = name;
         this.id = id;
@@ -22,5 +22,5 @@ class employee {
     }
 }
  
-module.exports = employee
+module.exports = AddedEmployee
 // console.log(employee)

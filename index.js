@@ -1,18 +1,18 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-const genHTML = require('./genHTML');
+// const genHTML = require('./genHTML');
 
-const employee = require('./assets/employee')
-const engineer = require("./assets/engineer")
-const intern = require("./assets/intern")
-const manager = require("./assets/manager")
+const AddedEmployee = require('./assets/employee')
+const AddedEngineer = require("./assets/engineer")
+const AddedIntern = require("./assets/intern")
+const AddedManager = require("./assets/manager")
 
 const workerArr = [];
 
 
 const createManager = () => {
-    inquirer
+    return inquirer
         .prompt([
             {
                 type: "input",
@@ -46,11 +46,6 @@ const createManager = () => {
                 type: "input",
                 name: "email",
                 message: "What is the team managers email address?:",
-                // validate: nameEntry => {
-                //     if (nameEntry === email){
-
-                //     }
-                // }
             },
             {
                 type: "input",
@@ -81,10 +76,10 @@ const createManager = () => {
 
 //employees object info
 const createEmployee = () => {
-    console.log('ADDING TEAM EMPLOYEES');
+    // console.log('ADDING TEAM EMPLOYEES');
 
-    inquirer.
-        prompt([
+    inquirer
+        .prompt([
             {
                 type: "list",
                 name: "job",
@@ -157,11 +152,11 @@ const createEmployee = () => {
             let { name, id, email, job, github, school, empConfirmation } = empData;
 
             if (job === "Engineer") {
-                employeeNew = new EngineerEmp(name, id, github, email);
+                employeeNew = new AddedEngineer(name, id, github, email);
                 console.log(employeeNew);
 
             } else if (job === "Intern") {
-                employeeNew = new InternEmp(name, id, school, email);
+                employeeNew = new AddedIntern(name, id, school, email);
                 console.log(employeeNew);
 
             }
@@ -176,22 +171,22 @@ const createEmployee = () => {
 }
 
 const createFile = data => {
-        fs.createFile('./index.html', data, err => {
-            if (err) {
-                console.log(err);
-                return;
-            } else {
-                console.log("HTML file successfully generated! New work team created.")
-            }
-        }) 
+    fs.createFile('./index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
+        } else {
+            console.log("HTML file successfully generated! New work team created.")
+        }
+    })
 }
 
 createManager()
-.then(createEmployee)
-.then(workerArr => {
-    return genHTML(workerArr)
-})
-.then (HTMLFile => {
+    .then(createEmployee)
+    .then(workerArr => {
+        return genHTML(workerArr)
+    })
+    .then(HTMLFile => {
 
-    return createFile(HTMLFile)
-});
+        return createFile(HTMLFile)
+    });

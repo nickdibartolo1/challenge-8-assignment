@@ -1,11 +1,17 @@
-const employee = rewqire("./employee");
+const employee = require("./employee");
 
 class manager extends employee {
-    constructor(property, id, email, officeNumber) {
+    constructor(name, id, email, officeNumber) {
 
-        super(property, id, email);
+        super(name, id, email);
 
         this.officeNumber = officeNumber;
 
     }
+
+    getjob(){
+        return "manager";
+    }
 }
+
+module.exports = manager;

@@ -1,10 +1,26 @@
 class employee {
-    constructor(property, id, email) {
-        this.property = property;
+    constructor(name, id, email) {
+        this.name = name;
         this.id = id;
         this.email = email;
     }
 
-}
+    getProperty(){
+        return this.name;
+    }
 
-console.log(employee)
+    getId(){
+        return this.id;
+    }
+
+    getEmail(){
+        return this.email;
+    }
+
+    getJob(){
+        return "Employee";
+    }
+}
+ 
+module.exports = employee
+// console.log(employee)

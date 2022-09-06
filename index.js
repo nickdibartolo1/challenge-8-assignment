@@ -1,9 +1,9 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// const genHTML = require('./genHTML');
+const genHTML = require('./genHTML');
 
-const AddedEmployee = require('./assets/employee')
+// const AddedEmployee = require('./assets/employee')
 const AddedEngineer = require("./assets/engineer")
 const AddedIntern = require("./assets/intern")
 const AddedManager = require("./assets/manager")

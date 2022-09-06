@@ -11,6 +11,7 @@ An application designed for generating a team profile page through user input pr
 - [Installation](#installation)
 - [Usage](#usage)
 - [Issues](#issues)
+- [Video](#video)
 - [Contributing](#contributing)
 - [GitHub](#github)
 - [Email](#email)

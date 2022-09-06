@@ -1,7 +1,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-const genHTML = require('./genHTML');
+const genHTML = require('./src/genHTML');
 
 // const AddedEmployee = require('./assets/employee')
 const AddedEngineer = require("./assets/engineer")
@@ -18,14 +18,6 @@ const createManager = () => {
                 type: "input",
                 name: "name",
                 message: "What is the team managers name?:",
-                validate: (nameEntry) => {
-                    if (nameEntry) {
-                        return true;
-                    } else {
-                        console.log("A name is needed for this entry")
-                        return false
-                    }
-                }
 
             },
             {
@@ -88,15 +80,6 @@ const createEmployee = () => {
                 type: "input",
                 property: "name",
                 name: "What is the employees name?:",
-                validate: nameEntry => {
-                    if (nameEntry) {
-                        return true;
-                    } else {
-                        console.log("A name is needed for this entry")
-                        return false
-                    }
-                }
-
             },
             {
                 type: "input",

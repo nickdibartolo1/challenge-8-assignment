@@ -45,7 +45,36 @@ const createIntern = function (intern) {
 }
 
 
+// function genHTML(data){
+//   const HTMLArray = [];
 
+// for (let i = 0; i < team.length; i++){
+//   const teamMember = team[i]
+//   const role = teamMember.role;
+  
+
+
+//  if (role === 'Manager'){
+//    const manager = managerCard(teamMember)
+//    cards.push(manager)
+//  }
+
+//  if (role === 'Engineer'){
+//   const engineer = engineerCard(teamMember)
+//   cards.push(engineer)
+//  }
+
+//  if (role === 'Intern'){
+//   const intern = internCard(teamMember)
+//   cards.push(intern)
+//  }
+
+ 
+ 
+// }
+// const teamCards = cards.join('')
+// return teamCards;
+// }
 
 
 

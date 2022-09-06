@@ -76,8 +76,6 @@ const createManager = () => {
 
 //employees object info
 const createEmployee = () => {
-    // console.log('ADDING TEAM EMPLOYEES');
-
     inquirer
         .prompt([
             {
@@ -118,27 +116,23 @@ const createEmployee = () => {
                 type: "input",
                 name: "email",
                 message: "What is the employees email address?:",
-                //
+                
             },
             {
                 type: "input",
                 name: "email",
-                message: "What is the employees github username?:",
-                //
+                message: "What is the employees github username?:"
 
             },
             {
                 type: "input",
                 name: "github",
                 message: "Enter the engineer employee's github username.",
-
-                //
             },
             {
                 type: "input",
                 name: "school",
                 message: "Enter the name of the intern's school.",
-                //
             },
             {
                 type: "confirm",
